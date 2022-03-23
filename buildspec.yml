@@ -33,3 +33,4 @@ artifacts:
     - node_modules/async/*
     - node_modules/lodash/*
     - deploy_scripts/*
+    - deployment_scripts/*
