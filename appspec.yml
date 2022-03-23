@@ -1,22 +1,19 @@
 version: 0.0
 os: linux
-
 files:
   - source: /
-    destination: /home/ubuntu/aws-codebuild-samples
-
-permissions:
-  - object: /
-    pattern: "**"
-    owner: root
-    group: root
+    destination: /home/ubuntu/aws-nodejs-sample-codebuild
 hooks:
-  ApplicationStop:
-    - location: deploy_scripts/stop.sh
+  BeforeInstall:
+    - location: deployment_scripts/before_install.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: deployment_scripts/after_install.sh
+      timeout: 300
       runas: root
   ApplicationStart:
-    - location: deploy_scripts/start.sh
+    - location: deployment_scripts/start_server.sh
+      timeout: 300
       runas: root
-  ValidateService:
-    - location: deploy_scripts/validate.sh
-      runas: root
+
