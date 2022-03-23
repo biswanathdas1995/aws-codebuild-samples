@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /home/ubuntu/aws-nodejs-sample-codebuild
+cd /home/ubuntu/aws-codebuild-samples
 npm -f install
 
