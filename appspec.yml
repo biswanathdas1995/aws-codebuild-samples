@@ -11,9 +11,6 @@ permissions:
     owner: root
     group: root
 hooks:
-  BeforeInstall:
-    - location: deploy_scripts/install.sh
-      runas: root
   ApplicationStop:
     - location: deploy_scripts/stop.sh
       runas: root
